@@ -1,0 +1,82 @@
+*rubocop.txt*   Run rubocop async within vim!
+
+Author:  Luke Pearce
+Repo:    https://github.com/kule/vim-rubocop
+
+==============================================================================
+CONTENTS                                                   *rubocop-contents*
+
+    1. Installation .....................|RubocopInstallation|
+    2. Configuration ................... |RubocopConfiguration|
+    3. Usage ........................... |RubocopUsage|
+    4. License ......................... |RubocopLicense|
+    5. Bugs ............................ |RubocopBugs|
+    6. Contributing .................... |RubocopContributing|
+
+==============================================================================
+1. Installation                                         *RubocopInstallation*
+
+This plugin requires {rubocop}{1}
+
+Using {vim-plug}{2}:
+>
+    Plug 'kule/vim-rubocop'
+<
+{1}: https://github.com/rubocop/rubocop
+
+==============================================================================
+2. Configuration                                       *RubocopConfiguration*
+
+
+By default it will look at Gemfile and use bundle exec rubocop --format emacs
+if rubocop is specified in the Gemfile, otherwise it will fallback to using
+`rubocop --format emacs`. This can be overridden
+
+    let g:rubocop_cmd = "bundle exec rubocop --no-display-cop-names"
+<
+
+
+NOTE that emacs formatter is required for this plugin to populate quickfix list
+
+==============================================================================
+3. Usage                                                       *RubocopUsage*
+
+Runs rubocop on the current buffer >
+  :Rubocop
+
+
+Runs rubocop on the whole project >
+  :RubocopAll
+
+
+Run rubocop with custom options >
+  :RubocopAll --no-display-cop-names
+
+
+Fix rubocop issues for current file. This will not be async. >
+  :RubocopFix
+
+<
+
+==============================================================================
+4. License                                                   *RubocopLicense*
+
+This plugin is MIT licensed.
+See https://github.com/kule/vim-rubocop/blob/master/LICENSE
+
+==============================================================================
+5. Bugs                                                         *RubocopBugs*
+
+If you find a bug please post it on the issue tracker:
+http://github.com/kule/vim-rubocop/issues/
+
+==============================================================================
+6. Contributing                                         *RubocopContributing*
+
+Think you can make this plugin better?  Awesome!  Fork it on GitHub and send a
+pull request.
+
+GitHub: http://github.com/kule/vim-rubocop
+
+==============================================================================
+vim:tw=78:sw=2:ts=2:ft=help:norl:nowrap:
